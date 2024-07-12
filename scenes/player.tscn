@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvikw0yis3t5l"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_1nr41"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rpd6a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_scabo"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_1nr41")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_rpd6a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_scabo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Coin: 0"
