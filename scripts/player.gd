@@ -1,10 +1,12 @@
 extends CharacterBody3D
 
 var coin = 0
-const SPEED = 2.5
-const JUMP_VELOCITY = 4.5
+const SPEED = 2
+const JUMP_VELOCITY = 4
 @onready var image = $Sprite3D
 @onready var player_anim = $PlayerAnimation
+@onready var camera = $CameraController
+@onready var text_label = $CanvasLayer/Label
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -50,9 +52,11 @@ func _physics_process(delta):
 		player_anim.stop()
 		image.frame_coords.y = 6
 		
+	move_and_slide()
+	
 	count_coin(str(coin))
 	
-	move_and_slide()
+	camera.position = lerp(camera.position, position, 0.15)
 
 func count_coin(x):
 	$CanvasLayer/Label.text = "coin: "+x

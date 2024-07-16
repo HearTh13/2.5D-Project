@@ -178,9 +178,6 @@ libraries = {
 "": SubResource("AnimationLibrary_uq2m8")
 }
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.964119, 0.265472, 0, -0.265472, 0.964119, 0, 0.676378, 1.62002)
-
 [node name="Sprite3D" type="Sprite3D" parent="."]
 offset = Vector2(0, 4)
 billboard = 2
@@ -195,6 +192,18 @@ frame = 40
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, 0)
 shape = SubResource("BoxShape3D_u7hba")
+
+[node name="CameraController" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.580071)
+top_level = true
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 0.919101, 0.394022, 0, -0.394022, 0.919101, 0, 0.242118, 0.93653)
+
+[node name="Camera3D" type="Camera3D" parent="CameraController/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.987738, -0.156124, 0, 0.156124, 0.987738, 0, -0.0697518, 0.441293)
+current = true
+fov = 46.8205
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

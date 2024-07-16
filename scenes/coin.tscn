@@ -4,14 +4,14 @@
 [ext_resource type="ArrayMesh" uid="uid://bspkrdbx117ud" path="res://assets/models/coin_new.res" id="2_x1d3b"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yg1ik"]
-height = 0.15
-radius = 0.3
+height = 0.02
+radius = 0.1
 
 [node name="Coin" type="Area3D"]
 script = ExtResource("1_31gr4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.36062e-08, 0.0688665, 0, 1.36062e-08, 1.31582e-16, -0.307457, -0.311273, -3.01025e-09, -1.34394e-08, 0, 0, 0)
+transform = Transform3D(-3.93403e-09, 0.015, -3.93403e-09, 0, -6.55671e-10, -0.09, -0.09, -6.55671e-10, 1.71962e-16, 0, 0, 0)
 mesh = ExtResource("2_x1d3b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
