@@ -7,10 +7,19 @@ const JUMP_VELOCITY = 4
 @onready var player_anim = $PlayerAnimation
 @onready var camera = $CameraController
 @onready var text_label = $CanvasLayer/Label
+@export var sens = 0.1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		rotate_y(deg_to_rad(-event.relative.x * sens))
+		camera.rotate_x(deg_to_rad(-event.relative.y * sens))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(45))
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -55,8 +64,6 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	count_coin(str(coin))
-	
-	camera.position = lerp(camera.position, position, 0.15)
 
 func count_coin(x):
 	$CanvasLayer/Label.text = "coin: "+x

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvikw0yis3t5l"]
+[gd_scene load_steps=15 format=3 uid="uid://dvikw0yis3t5l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1nr41"]
 [ext_resource type="Texture2D" uid="uid://ewguvi368iif" path="res://assets/Small-8-Direction-Characters_by_AxulArt/Small-8-Direction-Characters_by_AxulArt.png" id="2_n1bf5"]
@@ -18,23 +18,6 @@ tracks/0/keys = {
 "values": [Vector2i(0, 5)]
 }
 
-[sub_resource type="Animation" id="Animation_6wwts"]
-resource_name = "move_forward"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2i(0, 5), Vector2i(0, 7)]
-}
-
 [sub_resource type="Animation" id="Animation_11kxp"]
 resource_name = "move_backward"
 length = 0.6
@@ -52,6 +35,23 @@ tracks/0/keys = {
 "values": [Vector2i(4, 5), Vector2i(4, 7)]
 }
 
+[sub_resource type="Animation" id="Animation_6wwts"]
+resource_name = "move_forward"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2i(0, 5), Vector2i(0, 7)]
+}
+
 [sub_resource type="Animation" id="Animation_bdcgy"]
 resource_name = "move_left"
 length = 0.6
@@ -67,57 +67,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2i(6, 5), Vector2i(6, 7)]
-}
-
-[sub_resource type="Animation" id="Animation_ey48i"]
-resource_name = "move_right"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2i(2, 5), Vector2i(2, 7)]
-}
-
-[sub_resource type="Animation" id="Animation_qpttu"]
-resource_name = "move_right_forward"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2i(1, 5), Vector2i(1, 7)]
-}
-
-[sub_resource type="Animation" id="Animation_ovfyf"]
-resource_name = "move_right_backward"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2i(3, 5), Vector2i(3, 7)]
 }
 
 [sub_resource type="Animation" id="Animation_i4r5w"]
@@ -154,6 +103,57 @@ tracks/0/keys = {
 "values": [Vector2i(7, 5), Vector2i(7, 7)]
 }
 
+[sub_resource type="Animation" id="Animation_ey48i"]
+resource_name = "move_right"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2i(2, 5), Vector2i(2, 7)]
+}
+
+[sub_resource type="Animation" id="Animation_ovfyf"]
+resource_name = "move_right_backward"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2i(3, 5), Vector2i(3, 7)]
+}
+
+[sub_resource type="Animation" id="Animation_qpttu"]
+resource_name = "move_right_forward"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2i(1, 5), Vector2i(1, 7)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uq2m8"]
 _data = {
 "RESET": SubResource("Animation_cdeah"),
@@ -169,6 +169,9 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u7hba"]
 size = Vector3(0.11, 0.2, 0.11)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bnlmo"]
+radius = 0.09
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_1nr41")
@@ -194,14 +197,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, 0)
 shape = SubResource("BoxShape3D_u7hba")
 
 [node name="CameraController" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.580071)
-top_level = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.177759)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraController"]
-transform = Transform3D(1, 0, 0, 0, 0.919101, 0.394022, 0, -0.394022, 0.919101, 0, 0.242118, 0.93653)
+transform = Transform3D(1, 0, 0, 0, 0.962118, 0.272633, 0, -0.272633, 0.962118, 0, 0.109079, 0.467037)
+shape = SubResource("SphereShape3D_bnlmo")
+spring_length = 2.0
+margin = 2.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraController/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 0.987738, -0.156124, 0, 0.156124, 0.987738, 0, -0.0697518, 0.441293)
 current = true
 fov = 46.8205
 
