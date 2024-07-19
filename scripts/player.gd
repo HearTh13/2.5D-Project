@@ -19,13 +19,27 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * sens))
 		camera.rotate_x(deg_to_rad(-event.relative.y * sens))
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(45))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-15), deg_to_rad(0))
 
 func _physics_process(delta):
+	player_movements(delta)
+	move_and_slide()
+	set_bar()
+	count_coin(str(coin))
+
+func count_coin(x):
+	$UI/CanvasLayer/Control/Label.text = x
+
+func set_bar():
+	$UI/CanvasLayer/HPBar.value = PlayerAttribute.player_hp
+	$UI/CanvasLayer/HPBar.max_value = PlayerAttribute.player_maxHp
+	$UI/CanvasLayer/MPBar.value = PlayerAttribute.player_mp
+	$UI/CanvasLayer/MPBar.max_value = PlayerAttribute.player_maxMp
+
+func player_movements(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
 	# Handle jump.
 	if Input.is_action_just_pressed("action") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -60,10 +74,3 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		player_anim.stop()
 		image.frame_coords.y = 6
-		
-	move_and_slide()
-	
-	count_coin(str(coin))
-
-func count_coin(x):
-	$CanvasLayer/Label.text = "coin: "+x

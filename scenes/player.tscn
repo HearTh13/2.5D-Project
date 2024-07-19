@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1nr41"]
 [ext_resource type="Texture2D" uid="uid://ewguvi368iif" path="res://assets/Small-8-Direction-Characters_by_AxulArt/Small-8-Direction-Characters_by_AxulArt.png" id="2_n1bf5"]
+[ext_resource type="PackedScene" uid="uid://qihvcmvxqntb" path="res://UI/ui.tscn" id="3_e2mlx"]
 
 [sub_resource type="Animation" id="Animation_cdeah"]
 length = 0.001
@@ -170,9 +171,6 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_u7hba"]
 size = Vector3(0.11, 0.2, 0.11)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_bnlmo"]
-radius = 0.09
-
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_1nr41")
 
@@ -200,10 +198,8 @@ shape = SubResource("BoxShape3D_u7hba")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.177759)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraController"]
-transform = Transform3D(1, 0, 0, 0, 0.962118, 0.272633, 0, -0.272633, 0.962118, 0, 0.109079, 0.467037)
-shape = SubResource("SphereShape3D_bnlmo")
-spring_length = 2.0
-margin = 2.5
+transform = Transform3D(1, 0, 0, 0, 0.962118, 0.272633, 0, -0.272633, 0.962118, 0, 0.26047, 0.885427)
+spring_length = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraController/SpringArm3D"]
 current = true
@@ -211,7 +207,13 @@ fov = 46.8205
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="DEBUG" type="Label" parent="CanvasLayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Coin: 0"
+
+[node name="UI" parent="." instance=ExtResource("3_e2mlx")]
+metadata/_edit_group_ = true
+
+[editable path="UI"]

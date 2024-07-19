@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds3mwmmnrw05c"]
+[gd_scene load_steps=6 format=3 uid="uid://ds3mwmmnrw05c"]
 
+[ext_resource type="PackedScene" uid="uid://b6q3bttyrkyib" path="res://scenes/object.tscn" id="1_d4pxh"]
 [ext_resource type="PackedScene" uid="uid://dvikw0yis3t5l" path="res://scenes/player.tscn" id="2_w28ep"]
 [ext_resource type="PackedScene" uid="uid://4d1j240rcggd" path="res://scenes/coin.tscn" id="3_jmdv0"]
 [ext_resource type="Environment" uid="uid://cfkoqhisibcpb" path="res://assets/resources/level_1_environment.tres" id="4_tesk8"]
@@ -12,6 +13,15 @@ transform = Transform3D(0.991264, 0.0485223, -0.12264, 0.0652551, 0.627638, 0.77
 shadow_enabled = true
 
 [node name="Objects" type="Node3D" parent="."]
+
+[node name="Object1" parent="Objects" instance=ExtResource("1_d4pxh")]
+transform = Transform3D(-0.703828, -0.467245, -0.535077, 0.105415, -0.813595, 0.571796, -0.702505, 0.346041, 0.621886, 0, 2.26059, 1.00396)
+
+[node name="Object2" parent="Objects" instance=ExtResource("1_d4pxh")]
+transform = Transform3D(0.146033, -0.894985, 0.421518, -0.815062, -0.350329, -0.461459, 0.560668, -0.276175, -0.780627, 0.829727, 2.26059, 1.77256)
+
+[node name="Object3" parent="Objects" instance=ExtResource("1_d4pxh")]
+transform = Transform3D(-0.483708, -0.509277, 0.711804, -0.14608, 0.848845, 0.508058, -0.862953, 0.141771, -0.484988, -1.13587, 2.97732, 1.77256)
 
 [node name="Player" parent="." instance=ExtResource("2_w28ep")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.273854, 3)

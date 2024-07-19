@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bspkrdbx117ud" path="res://assets/models/coin_new.res" id="2_x1d3b"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xs1qd"]
-radius = 0.09
+radius = 0.12
 
 [node name="Coin" type="Area3D"]
 script = ExtResource("1_31gr4")
